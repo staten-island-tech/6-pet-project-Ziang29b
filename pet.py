@@ -1,21 +1,26 @@
-class pet():
-    def __init__(self, name, money, inventory, health, sanity, hunger, thrist, energy, happiness):
+class Pet:
+    def __init__(self, name, money, inventory, health, sanity, hunger, thirst, energy, happiness):
         self.name = name
         self.money = money
         self.inventory = inventory
         self.health = health
         self.sanity = sanity
         self.hunger = hunger
-        self.thrist= thrist
-        self.energy= energy
-        self.happiness= happiness
+        self.thirst = thirst
+        self.energy = energy
+        self.happiness = happiness
+
     def buy(self, item):
-        self.inventory.append(item)
-        print(self.inventory)
-    def buy(self, item):
-        self.inventory.append(item)
-        print(self.inventory)
-dolphin = pet("dolphin", 67, ["fish"], 100, 100, 100, 100, 100, 67)
-dolphin.buy({"title": "Sword", "atk": 34} self.money-34)
+        cost = item["cost"]
+        if self.money >= cost:
+            self.money -= cost
+            self.inventory.append(item)
+            print("u bought:", item)
+            print("heres your updated inventory:", self.inventory)
+            print("your money left:", self.money)
+        else:
+            print("ur too poor need more money", item["title"])
+dolphin = Pet("dolphin", 67, ["fish"], 100, 100, 100, 100, 100, 67)
+item = {"title": "t-90m", "cost": 67}
+dolphin.buy(item)
 print(dolphin.__dict__)
- 
