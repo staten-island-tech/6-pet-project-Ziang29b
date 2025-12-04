@@ -9,7 +9,6 @@ class Pet:
         self.thirst = thirst
         self.energy = energy
         self.happiness = happiness
-    
     def buy(self, item):
         price = item["price"]
         print ("do you want to buy?")
@@ -25,6 +24,8 @@ class Pet:
         else:
             print("ur too poor need more money", item["title"])
 dolphin = Pet("dolphin", 167, ["fish"], 100, 100, 100, 100, 100, 67)
+    
+    
 stuff=[ 
                 {
                 "price":2,
@@ -64,9 +65,10 @@ while shopping:
             print ("cashier is up front",bought)
             total = 0
             for item in bought:
-                price_str = item["price"][0]
+                price_str = item["price"]
                 total += float(price_str)   
             print("total price: $", total)
             break 
+        
 dolphin.buy(item)
 print(dolphin.__dict__)
