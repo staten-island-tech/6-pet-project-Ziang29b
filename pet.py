@@ -22,7 +22,7 @@ class Pet:
         elif input ==("no, nah, nuh uh").lower:
                 print ("okay bye bye")
         else:
-            print("ur too poor need more money", item["title"])
+            print("ur too poor need more money", item)
 dolphin = Pet("dolphin", 167, ["fish"], 100, 100, 100, 100, 100, 67)
     
     
@@ -43,7 +43,7 @@ stuff=[
                  "name": "giant baguette pillow"
                 }
                 ]
-
+item = []
 shopping = True 
 bought=[]
 while shopping:
