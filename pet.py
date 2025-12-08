@@ -12,7 +12,8 @@ class Pet:
     def buy(self, item):
         price = item["price"]
         print ("do you want to buy?")
-        if input == ("yes, yep, yea, yeah").lower:
+        answer = input("do you want to buy? ").lower()
+        if answer in ("yes", "yep", "yea", "yeah"):
             if self.money >= price:
                 self.money -= price
             self.inventory.append(item)
@@ -24,7 +25,6 @@ class Pet:
         else:
             print("ur too poor need more money", item)
 dolphin = Pet("dolphin", 167, ["fish"], 100, 100, 100, 100, 100, 67)
-    
     
 stuff=[ 
                 {
@@ -53,22 +53,22 @@ while shopping:
                 if item["name"] == user_input:
                     print(item)
                     bought.append (item)
-                
-
-
-        else: 
-            print("we no have")
-        user_input = input ("are you still shopping?").lower()
-        if user_input in ["yea" , "yes", "yeah", "yep" , "yuh"]:
+                    if dolphin.money >= item.price:
+                            dolphin.money -= item.price
+                            dolphin.inventory.append(item)
+else: 
+    print("we no have")
+    user_input = input ("are you still shopping?").lower()
+    if user_input in ["yea" , "yes", "yeah", "yep" , "yuh"]:
             print ("okay enjoy your shopping")
-        else: 
+    else: 
             print ("cashier is up front",bought)
             total = 0
             for item in bought:
                 price_str = item["price"]
                 total += float(price_str)   
             print("total price: $", total)
-            break 
+    
         
 dolphin.buy(item)
 print(dolphin.__dict__)
