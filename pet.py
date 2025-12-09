@@ -43,9 +43,11 @@ stuff=[
                  "name": "giant baguette pillow"
                 }
                 ]
-item = []
+
 shopping = True 
 bought=[]
+for item in stuff:
+     print(item)
 while shopping:
         user_input = input("what do you want, banana apple or giant baguette pillow: ").lower()
         if user_input in [item["name"] for item in stuff]:
@@ -53,21 +55,21 @@ while shopping:
                 if item["name"] == user_input:
                     print(item)
                     bought.append (item)
-                    if dolphin.money >= item.price:
-                            dolphin.money -= item.price
+                    if dolphin.money >= item['price']:
+                            dolphin.money -= item['price']
                             dolphin.inventory.append(item)
-else: 
-    print("we no have")
-    user_input = input ("are you still shopping?").lower()
-    if user_input in ["yea" , "yes", "yeah", "yep" , "yuh"]:
-            print ("okay enjoy your shopping")
-    else: 
-            print ("cashier is up front",bought)
-            total = 0
-            for item in bought:
-                price_str = item["price"]
+                    else: 
+                        print("we no have")
+                    user_input = input ("are you still shopping?").lower()
+                    if user_input in ["yea" , "yes", "yeah", "yep" , "yuh"]:
+                        print ("okay enjoy your shopping")
+                    else: 
+                        print ("cashier is up front",bought)
+                    total = 0
+                    for item in bought:
+                        price_str = item["price"]
                 total += float(price_str)   
-            print("total price: $", total)
+                print("total price: $", total)
     
         
 dolphin.buy(item)
