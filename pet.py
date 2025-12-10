@@ -43,7 +43,7 @@ stuff=[
                  "name": "giant baguette pillow"
                 }
                 ]
-
+item=[]
 shopping = True 
 bought=[]
 for item in stuff:
